@@ -49,40 +49,83 @@ let name2 = "Ilya";
 // alert( `hello ${name2}` );
 
 let accessAllowed;
-let age = prompt('How old are you?', '');
+// let age = prompt('How old are you?', '');
+// if (age > 18) {
+//  accessAllowed = true;
+// } else {
+//  accessAllowed = false;
+// }
+// alert(accessAllowed);
 
-if (age > 18) {
-  accessAllowed = true;
-} else {
-  accessAllowed = false;
+// let officialName = prompt("Quel est le nom “officiel” de JavaScript?", '');
+// const rep = officialName == "ECMAScript" ? "Right" : "Tu ne connais pas ECMAScript ?";
+//alert(rep);
+
+// let a = +prompt('a?', '');
+
+// switch (a) {
+//     case 0:
+//         alert( 0 );
+//         break;
+//     case 1:
+//         alert( 1 );
+//         break;
+//     case 2:
+//     case 3:
+//         alert( '2, 3');
+//         break;
+//     default:
+//         alert('hmmmmmm');
+// }
+
+// let age2 = prompt("What is your age?", '');
+
+// let welcome = (age2 < 18) ?
+//   () => alert("Hello!");
+//   () => alert("Greetings!");
+
+// welcome(); // ok now
+
+let arr1 = new Array();
+let arr2 = [];
+
+// 
+let shopping = ["pain", "lait", "fromage", "houmous", "nouilles"];
+console.log(shopping);
+
+// Tableau imbriqué
+let shoppingI = ["pain", "lait", ["tome de savoie", "brie", "camenbert"], "houmous", "nouilles"];
+
+let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+
+// récupère l'objet à l'index 1 et montre ensuite son nom
+alert( arr[1].name ); // John
+
+// affiche la fonction à l'index 3 et l'exécute la
+arr[3](); // hello
+
+// TODO
+langages = ["JavaScript", "CSS"];
+langages.push("PHP");
+langages[1] = "SCSS";
+alert(langages[0]);
+langages.push("Python")
+console.log(langages);
+
+function calculSumInput(val) {
+  tableau = [14, 9]
+  const valInt = parseInt(val);
+  if (isNaN(valInt)) {
+    alert("Pas un nombre");
+    return;
+  }
+  tableau.push(valInt);
+  let somme = 0;
+  for (let v of tableau) {
+    somme += v;
+  }
+  alert("La somme est : " + somme);
 }
-alert(accessAllowed);
 
-let officialName = prompt("Quel est le nom “officiel” de JavaScript?", '');
-const rep = officialName == "ECMAScript" ? "Right" : "Tu ne connais pas ECMAScript ?";
-alert(rep);
-
-let a = +prompt('a?', '');
-
-switch (a) {
-    case 0:
-        alert( 0 );
-        break;
-    case 1:
-        alert( 1 );
-        break;
-    case 2:
-    case 3:
-        alert( '2, 3');
-        break;
-    default:
-        alert('hmmmmmm');
-}
-
-let age2 = prompt("What is your age?", '');
-
-let welcome = (age2 < 18) ?
-  () => alert("Hello!") :
-  () => alert("Greetings!");
-
-welcome(); // ok now
+const val = prompt("Rentrez une valeur")
+calculSumInput(val);
