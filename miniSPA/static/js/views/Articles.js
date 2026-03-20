@@ -1,14 +1,25 @@
 async function render_articles(data) {
-    const body  = document.querySelector('body');
-    body.innerHTML = "";
+    const app = document.querySelector('#app');
+    app.innerHTML = "";
 
-    let ul = document.createElement('ul')
+    const title = document.createElement('h1');
+    title.textContent = "Articles de la Constitution";
+    app.appendChild(title);
+
+    let ul = document.createElement('ul');
+    ul.className = "article-list";
 
     data.forEach(element => {
         let li = document.createElement('li');
-        li.innerHTML = element.title;
-        ul.appendChild(li)
+        let a = document.createElement('a')
+
+        li.className = "article-item";
+        a.href = `#/articles/${element.id}/`;
+        a.textContent = element.title;
+
+        li.appendChild(a);
+        ul.appendChild(li);
     });
 
-    body.appendChild(ul);
+    app.appendChild(ul);
 }
